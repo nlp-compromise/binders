@@ -1,0 +1,21 @@
+{
+  "name": "binders",
+  "version": "1.0.0",
+  "description": "we have binders full of people",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "wtf_wikipedia": "^10.2.0",
+    "dotenv": "^16.3.1",
+    "shelljs": "^0.8.5",
+    "spacetime": "^7.4.4",
+    "sunday-driver": "^1.0.2",
+    "wtf-plugin-classify": "^2.0.1",
+    "wtf-plugin-person": "^1.0.0",
+    "wtf-plugin-summary": "^1.0.0"
+  }
+}
