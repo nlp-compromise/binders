@@ -4,7 +4,7 @@ const cpuCount = os.cpus().length
 
 const doit = function (given) {
   let opts = {
-    input: '/Volumes/4TB/texts/web-text/wikipedia/afwiki-latest-pages-articles.xml',
+    input: '/Volumes/4TB/wikipedia/enwiki-latest-pages-articles.xml',
     // which wikipedia namespaces to handle (null will do all)
     namespace: 0, //(default article namespace)
     // whether to include pages that are redirects
@@ -22,7 +22,9 @@ const doit = function (given) {
     // should we return anything for this page?
     doPage: function () {
       return true
-    } // (default)
+    }, // (default)
+    // where to append results
+    output: './results.txt'
   }
   opts = Object.assign({}, opts, given)
 

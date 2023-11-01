@@ -1,7 +1,7 @@
-import dumpster from './src/index.js'
+import dumpster from '../src/index.js'
 
 let opts = {
-  input: '/Volumes/4TB/texts/web-text/wikipedia/enwiki-latest-pages-articles.xml',
+  output: './results/template-redirects.jsonl',
   namespace: 10, //template
   redirects: true,
   disambiguation: true,
@@ -9,7 +9,7 @@ let opts = {
     return doc.isRedirect()
   },
   parse: function (doc) {
-    return { _id: doc.title(), redirect: doc.redirectTo() }
+    return { _id: doc.title(), redirect: doc.redirectTo().page }
   }
 }
 dumpster(opts)

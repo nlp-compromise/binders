@@ -16,7 +16,7 @@ wtf.extend(i18n)
 wtf.extend(disambig)
 wtf.extend(summary)
 
-let { input, index, workers, namespace, redirects, disambiguation } = workerData
+let { input, index, workers, namespace, redirects, disambiguation, output } = workerData
 let methods = JSONfn.parse(workerData.methods)
 
 let status = {
@@ -48,7 +48,7 @@ const eachPage = function (meta) {
 
 setTimeout(() => {
   // start off the worker!
-  reader({ index, workers, file: input }, eachPage).then(() => {
+  reader({ index, workers, file: input, output }, eachPage).then(() => {
     console.log(magenta(`worker #${index} finished`))
   })
 }, 2000)

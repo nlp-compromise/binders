@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import parseXml from './02-xml.js'
-import writeDb from './03-db.js'
+import write from './03-write.js'
 import sundayDriver from 'sunday-driver'
 import { decode } from 'html-entities'
 
@@ -27,9 +27,7 @@ const readWiki = function (opts, parsePage) {
           resume()
           return
         }
-        writeDb(res).then(() => {
-          resume()
-        })
+        write(res, opts)
       } catch (e) {
         console.log(red(`Worker ${opts.index} couldn't process ${pageTitle}: got error ${e}`));
         resume();

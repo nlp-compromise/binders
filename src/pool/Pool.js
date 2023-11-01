@@ -41,6 +41,7 @@ class Pool extends EventEmitter {
           disambiguation: this.opts.disambiguation,
           wtfPath: this.opts.wtfPath,
           workers: this.opts.workers,
+          output: this.opts.output,
           methods: this.methods,
         }
       }
@@ -75,8 +76,9 @@ class Pool extends EventEmitter {
   beat() {
     this.workers.forEach(w => w.postMessage('thump'))
     setTimeout(() => {
-      let row = this.status.map(o => o.written !== undefined ? o.written.toLocaleString().padStart('8') : "???").join('   ')
-      console.log(grey(row))
+      console.log(this.status)
+      // let row = this.status.map(o => o.written !== undefined ? o.written.toLocaleString().padStart('8') : "???").join('   ')
+      // console.log(grey(row))
       let allDone = this.status.every(obj => obj.finished === true)
       if (allDone === true) {
         console.log(`Final worker states: ${JSON.stringify(this.status)}`);

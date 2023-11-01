@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "we have binders full of people",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,11 +11,14 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.3.1",
+    "html-entities": "^2.4.0",
+    "jsonfn": "^0.31.0",
     "shelljs": "^0.8.5",
     "spacetime": "^7.4.4",
     "sunday-driver": "^1.0.2",
     "wtf_wikipedia": "^10.2.0",
     "wtf-plugin-classify": "^2.0.1",
+    "wtf-plugin-disambig": "^1.0.0",
     "wtf-plugin-i18n": "^1.0.1",
     "wtf-plugin-person": "^1.0.0",
     "wtf-plugin-summary": "^1.0.0"
