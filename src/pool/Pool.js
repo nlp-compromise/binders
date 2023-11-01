@@ -49,6 +49,7 @@ class Pool extends EventEmitter {
       const worker = new Worker(file, info)
       // receive status of each worker, when requested
       worker.on('message', (msg) => {
+        console.log('msg', msg)
         this.status[msg.status.index] = msg.status
       })
       worker.on('error', (err) => console.error(err))

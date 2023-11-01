@@ -4,6 +4,10 @@ import fs from 'fs'
 
 const write = async function (obj, opts) {
   let file = opts.output || './out.txt'
-  fs.writeFileSync(file, JSON.stringify(obj) + '\n', { flag: 'a' })
+  let out = JSON.stringify(obj)
+  if (typeof obj === 'string') {
+    out = obj
+  }
+  fs.writeFileSync(file, out + '\n', { flag: 'a' })
 }
 export default write
