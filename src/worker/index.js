@@ -3,6 +3,7 @@ import { JSONfn } from 'jsonfn'
 import wtfLib from 'wtf_wikipedia'
 import reader from './01-reader.js'
 import classify from 'wtf-plugin-classify'
+import summary from 'wtf-plugin-summary'
 import i18n from 'wtf-plugin-i18n'
 import disambig from 'wtf-plugin-disambig'
 
@@ -13,6 +14,7 @@ let wtf = wtfLib
 wtf.extend(classify)
 wtf.extend(i18n)
 wtf.extend(disambig)
+wtf.extend(summary)
 
 let { input, index, workers, namespace, redirects, disambiguation } = workerData
 let methods = JSONfn.parse(workerData.methods)
