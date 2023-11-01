@@ -31,13 +31,16 @@ const eachPage = function (meta) {
   let doc = wtf(meta.wiki, meta)
   // skip redirect pages
   if (redirects === false && doc.isRedirect()) {
+    // console.log('redirect  -> null')
     return null
   }
   // skip disambiguation pages
   if (disambiguation === false && doc.isDisambig()) {
+    // console.log('disambig ->null')
     return null
   }
   if (!methods.doPage(doc)) {
+    // console.log('dopage  -> null')
     return null
   }
   // actually process the page

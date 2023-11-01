@@ -23,11 +23,10 @@ const readWiki = function (opts, parsePage) {
         pageTitle = meta.title
         meta.wiki = decode(meta.wiki);
         let res = parsePage(meta)
-        if (!res) {
-          resume()
-          return
+        resume()
+        if (res !== null) {
+          write(res, opts)
         }
-        write(res, opts)
       } catch (e) {
         console.log(red(`Worker ${opts.index} couldn't process ${pageTitle}: got error ${e}`));
         resume();
